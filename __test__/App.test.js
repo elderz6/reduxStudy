@@ -11,8 +11,6 @@ import postReducer from '../src/reducers/postReducer';
 import * as action from '../src/actions/postActions';
 import { FETCH_POSTS, NEW_POST } from '../src/actions/types';
 
-
-
 const middlewares = [thunk];
 const mockStore = configureMockStore(middlewares);
 
@@ -45,10 +43,6 @@ describe('Post Reducer', ()=>
       });
   });
 });
-
-
-
-
 
 
 // it('renders without crashing', () => {
