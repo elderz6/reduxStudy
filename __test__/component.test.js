@@ -5,6 +5,8 @@ import configureStore from 'redux-mock-store'
 import ReactDOM from 'react-dom';
 import configureMockStore from 'redux-mock-store';
 import Adapter from 'enzyme-adapter-react-16';
+//for connected components use only the necessary class
+// add an extra export before the class
 import {Posts} from '../src/Components/Posts';
 
 //SETUP
@@ -25,15 +27,15 @@ function setup() {
 
 describe('Posts component', ()=>
 {
+  const { enzymeWrapper, props } = setup();
+
   it('should work', ()=>
   {
-    const { enzymeWrapper } = setup();
     expect(enzymeWrapper.find('div').hasClass('beirute')).toBe(true);
   });
 
   it('fetches the posts', ()=>
   {
-      const { enzymeWrapper, props } = setup();
       expect(props.fetchPosts).toBeCalled();
   });
 });
