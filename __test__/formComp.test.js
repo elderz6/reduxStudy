@@ -25,9 +25,10 @@ function setup() {
 
 describe('PostForm Component', ()=>
 {
+  const { enzymeWrapper } = setup();
+
   it('Renders',()=>
   {
-    const { enzymeWrapper } = setup();
     expect(enzymeWrapper.find('div').hasClass('brtao')).toBe(true);
   });
 
